@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+    # ReadWriteOnce, ReadOnlyMany, ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+    # Retain, Delete, Recycle
+  storageClassName: hostpath
+  hostPath:
+    path: /data
